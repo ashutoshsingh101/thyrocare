@@ -1,0 +1,30 @@
+import nltk
+from nltk.corpus import genesis
+from nltk.tokenize import sent_tokenize
+#this new tokenizer is for unsupervise machine learning
+train_text =  genesis.raw("english-web.txt")
+tokenized = sent_tokenize(train_text)
+usedwords = {}
+t = {}
+
+def process_content():
+     try:
+         for i in tokenized:
+
+             words = nltk.word_tokenize(i)
+             tagged = nltk.pos_tag(words)
+
+
+             if tagged[0][1] == 'NNP':
+
+                print (i.replace(tagged[0][0],"Who"),"?")
+
+
+             else:
+                 print(0)
+
+
+
+     except Exception as e:
+         print(str(e))
+process_content()
