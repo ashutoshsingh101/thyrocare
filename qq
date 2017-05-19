@@ -1,7 +1,6 @@
 import nltk
 from nltk.corpus import genesis
 from nltk.tokenize import sent_tokenize,word_tokenize
-#this new tokenizer is for unsupervise machine learning
 train_text =  genesis.raw("english-web.txt")
 tokenized = sent_tokenize(train_text)
 usedwords = {}
